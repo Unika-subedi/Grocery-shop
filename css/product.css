@@ -1,0 +1,114 @@
+:root {
+  --orange: #ff7800;
+  --black: #130f40;
+  --light-color: #666;
+  --box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+  --border: 0.2rem solid rgba(0, 0, 0, 0.1);
+  --outline: 0.1rem solid rgba(0, 0, 0, 0.1);
+  --outline-hover: 0.2rem solid var(--black);
+}
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top: 7rem;
+}
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: all 0.2s linear;
+}
+.heading {
+  text-align: center;
+  padding: 2em;
+  font-weight: bold;
+  font-size: 3.5rem;
+}
+.heading span {
+  background: var(--orange);
+  color: #fff;
+  display: inline-block;
+  padding: 0.5rem 3rem;
+  clip-path: polygon(30px 0%, 100% 0%, 100% 100%, 30px 100%, 0 50%);
+}
+.btn:hover {
+  background: var(--orange);
+  color: #fff;
+}
+
+.products.heading {
+  display: absolute;
+}
+
+.product_grid {
+  display: grid;
+  grid-gap: 2px;
+}
+.products .product-container1:first-child {
+  margin-bottom: 2rem;
+}
+
+.products .product-container1 .wrapper_box {
+  background: #fff;
+  border-radius: 0.5rem;
+  text-align: center;
+  padding: 3rem 2rem;
+  outline-offset: -1rem;
+  outline: var(--outline);
+  box-shadow: var(--box-shadow);
+  transition: 0.2s linear;
+}
+.products .product-container1 .wrapper_box:hover {
+  outline-offset: 0rem;
+  outline: var(--outline-hover);
+}
+.products .product-container1 .wrapper_box img {
+  height: 20rem;
+}
+.products .product-container1 .wrapper_box h3 {
+  font-size: 2.5rem;
+  color: var(--black);
+}
+.products .product-container1 .wrapper_box .price {
+  font-size: 2rem;
+  color: var(--light-color);
+  padding: 0.5rem 0;
+}
+.btn {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 0.8rem 3rem;
+  font-size: 1.7rem;
+  border-radius: 0.5rem;
+  border: 0.2rem solid var(--black);
+  color: var(--black);
+  cursor: pointer;
+  background: none;
+}
+
+user agent stylesheet a:-webkit-any-link {
+  color: -webkit-link;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.products .product-slider .box {
+  background: #fff;
+  border-radius: 0.5rem;
+  text-align: center;
+  padding: 3rem 2rem;
+  outline-offset: -1rem;
+  outline: var(--outline);
+  box-shadow: var(--box-shadow);
+  /* transition: .2s linear; */
+}
+@media (max-width: 991px) {
+  .product-page {
+    font-size: 55%;
+  }
+}
