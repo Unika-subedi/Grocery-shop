@@ -16,6 +16,7 @@
 	<?php
 		session_start();
 	?>
+	<link rel="stylesheet" href="./css/signup.css"/>
 	<p style="color:red;text-align:center;font-size:15px;font-weight:bold">
         <?php
             if(isset($_SESSION['checkUserP'])){
@@ -32,7 +33,14 @@
 		<form action="database/database-for-login.php" method="post">
 			<input type="text" class="field" name="Username" placeholder="Username" required=""><br/>
             <input type="password" class="field" name="Password" placeholder="Password" required=""><br/>
-            <input type="submit" class="field" name="login" value="Login">
+			<label for="roles">
+			<input type="option" class="field" name="roles" required=""></label>
+			<div class="action-s">
+            <input type="submit" class="field" name="login" value="Login">&nbsp;&nbsp;
+			<label for="signup">
+				<a href="signup.php"><input type="button" name="signup" value="signup"></a>
+			</label>
+		</div>
 		</form>
 	</div>
 

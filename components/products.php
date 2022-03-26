@@ -1,4 +1,5 @@
-<link rel="stylesheet" href="../css/product.css"/>
+<!-- <link rel="stylesheet" href="../css/product.css"/> -->
+<?php require_once('header.php'); ?>
 <body>
    <div class="product-page">
   <!-- products section starts  -->
