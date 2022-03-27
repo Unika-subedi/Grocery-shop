@@ -1,5 +1,7 @@
 
-<?php include_once('./header.php'); ?>
+<?php include_once('./header.php'); 
+    include_once('./functions.php');
+?>
 <section class="categories" id="categories">
 
     <h1 class="heading"> product <span>categories</span> </h1>

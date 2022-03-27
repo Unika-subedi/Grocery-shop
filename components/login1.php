@@ -8,6 +8,9 @@
 		.field{
 			margin-bottom: 20px;
 		}
+		.form-group select{
+			align-items: center;
+		}
 	</style>
 </head>
 <body>
@@ -29,13 +32,17 @@
 
 
 
-<div>
+	<div class="form-group">
 		<form action="database/database-for-login.php" method="post">
-			<input type="text" class="field" name="Username" placeholder="Username" required=""><br/>
+			<input type="text" class="field" name="Username"  required=""><br/>
             <input type="password" class="field" name="Password" placeholder="Password" required=""><br/>
-			<label for="roles">
-			<input type="option" class="field" name="roles" required=""></label>
-			<div class="action-s">
+			<label for="Roles">
+			<select name="Roles" id="Roles"class="field"  required="">
+				<option value="select Roles" selected>select role</option>
+				<option value="select">admin</option>
+				<option value="select">user</option>
+			</label><br><br>
+			<br><br><div class="action-s">
             <input type="submit" class="field" name="login" value="Login">&nbsp;&nbsp;
 			<label for="signup">
 				<a href="signup.php"><input type="button" name="signup" value="signup"></a>

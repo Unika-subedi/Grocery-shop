@@ -3,15 +3,17 @@
 session_start();
     include("./connection.php");
    if (isset($_POST['login'])) {
-   	   $Username = $_POST['Username'];
-   	   $Password = $_POST['Password'];
+   		$Username = $_POST['Username'];
+   		$Password = $_POST['Password'];
+		$Roles = $_POST['Roles'];
 
-   	   $select = mysqli_query($conn, "SELECT * FROM tb_customer WHERE Username = '$Username' AND Password = '$Password'");
+   	   $select = mysqli_query($conn, "SELECT * FROM tb_customer WHERE Username = '$Username' ,Password = '$Password' AND Roles='$Roles'");
    	//    $row = mysqli_fetch_array($select);
        
    	   if(mysqli_num_rows($select)==1){
    	   	$_SESSION["Username"] = $row ['Username'];
    	   	$_SESSION["Password"] = $row ['Password'];
+   	   	$_SESSION["Roles"] = $row ['Roles'];
 		header("location:../home/home.php");
    	   }   
 		//   else{
