@@ -1,9 +1,9 @@
 <?php 
  include_once('header.php');
 
-if (!($_SESSION['user_type']=="admin" || $_SESSION['user_type']=="user")) {
-	$_SESSION['msg'] = "You must log in first";
-	header('location: ./login.php');
+
+if(!$_SESSION['user_type']=="user"){
+    header('location: ./home.php');
 }
 
 if (isset($_GET['logout'])) {

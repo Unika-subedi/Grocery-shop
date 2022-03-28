@@ -1,64 +1,35 @@
 <?php
-   include("../database/connection.php");
-   session_start();
-//    $user_check = $_SESSION['login_user'];
-   
-//    $ses_sql = mysqli_query($conn,"select Username from tb_customer where Username = '$user_check' ");
-   
-//    $row = mysqli_fetch_array($ses_sql,MYSQLI_ASSOC);
-   
-//    $login_session = $row['Username'];
-   
-//    if(!isset($_SESSION['login_user'])){
-//       header("location:login.php");
-//       die();
-//    }
-   
-   if($_SERVER["REQUEST_METHOD"] == "POST") {
-      // username and password sent from form 
-      
-      $myusername = mysqli_real_escape_string($conn,$_POST['Username']);
-      $mypassword = mysqli_real_escape_string($conn,$_POST['Password']); 
-      
-      $sql = "SELECT * FROM tb_customer WHERE Username = '$myusername' and Password = '$mypassword'";
-      $result = mysqli_query($conn,$sql);
+session_start();
+include '../database/connection.php';
+if($_SERVER["REQUEST_METHOD"] == "POST") {
+    $myusername = $_POST['Username'];
+    $mypassword = $_POST['Password'];
+    $usertype=$_POST['user_type'];
 
+    $sql = "SELECT id, username FROM tb_customer WHERE Username = '$myusername' and Password = '$mypassword'";
+    $result = mysqli_query($conn,$sql);
+    $row = mysqli_fetch_assoc($result);
 
+    $count = mysqli_num_rows($result);
 
-	//   if(!$result){
-		
-	// 		printf("Error: %s\n", mysqli_error($conn));
-	// 		exit();
-	//   }
+    // var_dump($count);
 
+    if($count == 1) {
+        $username = $row['username'];
+        $_SESSION['username'] = $username;
+        $_SESSION['user_type']=$usertype;
 
+        header("location: ./home.php");
+    }else 
+        echo "<script>
+        alert('Invalid Email/Password');
+        window.location = './login.php';
+        </script>";
+}
 
-	
-      $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-    //  $active = $row['active'];
-      
-      $count = mysqli_num_rows($result);
-      
-      // If result matched $myusername and $mypassword, table row must be 1 row
-		
-      if($count == 1) {
-
-                $_SESSION['user_type']= $row['user_type'];
-        
-
-         $_SESSION['login_user'] = $myusername; 
-         if($_SESSION['user_type']=="admin"){
-         header("location: ../admin validation/admindashboard.php");
-         }elseif($_session['user_type']=="user"){
-            header("location:./home.php");
-         }
-
-      }else {
-         $error = "Your Login Name or Password is invalid";
-      
-	}
-   }
 ?>
+
+
 <!DOCTYPE html>
 <html>
 <head>

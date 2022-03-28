@@ -1,4 +1,6 @@
+<?php include'./function.php'
 
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,6 +12,7 @@
 	<h2>Register</h2>
 </div>
 <form method="post" action="register.php">
+<?php include('errors.php'); ?>
 	<div class="input-group">
 		<label>Username</label>
 		<input type="text" name="Username" value="">

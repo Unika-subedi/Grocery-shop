@@ -1,18 +1,7 @@
 <?php session_start(); 
 include './header.php';
-
-$file_name = $_FILES['image']['name'];
-        $file_tmp = $_FILES['image']['tmp_name'];
-
-        move_uploaded_file($file_tmp, "../images/" . $file_name);
-            ?><br /><br />
-            ?>
-<input type="submit" name="submit" value="submit">
-
 ?>
-<!-- <div class="header">
-                Hello <?php echo $_SESSION['Username']; ?>
-            </div> -->
+
 
             <!DOCTYPE html>
 <html lang="en">
@@ -25,62 +14,55 @@ $file_name = $_FILES['image']['name'];
     
 </head>
 <link rel="stylesheet" href="../css/cart.css"/>
-<body>
-    <div class="title">
-        <h1>Cart items</h1>
-    </div>
-    
-    <div class="main">
-    <table class="content-table">
-        <thead>
-            <tr>
-                <th>S.N</th>
-                <!-- <th>Id</th> -->
-                <th>Name</th>
-                <th>Items</th>
-                <th>Quantity</th>
-                <th>Price</th>
-                <!-- <th>Total</th> -->
-                <th>Action</th>
-            </tr>
-        </thead>
-    </div>
-
-    <?php
-    include "../database/connection.php";
-
-    $selectQuery = "SELECT * FROM cartitems";
-
-    $result = mysqli_query($conn, $selectQuery);  //
-
-    if(mysqli_num_rows($result)){
-        $i = 1;
-        while($row = mysqli_fetch_assoc($result)){
-        
-
-?>
-    <tbody>
-    <tr>
-        <td><?php echo $i;?></td>
-        <!-- <td><?php echo $row ['Id'];?></td> -->
-        <td><?php echo $row ['name']?></td>
-        <td><?php echo $row ['items']?></td>
-        <td><?php echo $row ['quantity']?></td>
-        <td><?php echo $row ['price']?></td>
-        
-        <td>   
-            <button><a href="edit.php?id=<?php echo $row['Id'];?>">Edit</a></button> 
-            <button>
-                <a href="delete.php?id=<?php echo $row['Id'];?>" onclick="return confirm('Do you want to delete ?')";>Delete</a>
-            </button>
-        </td>
-    </tr>
-        <?php
-        $i++;
-        }
+<style>
+    h1{
+        text-align:center;
+        background-color:dark;
+        text-color:white;
     }
-        ?>
-    </tbody>
-    </table>
+    div{
+        text-align:center;
+    }
+    </style>
+<body>
+    
+    
+    <div class="container">
+        <br>
+        <h1 class="text-white bg-dark text-center">
+            Order Form for Vegetables
+        </h1>
+        <div class="col-lg-8 m-auto-d-block">
+<form action="viewcart.php" method="post" enctype="multipart/form-data">
+
+
+
+<div class="form-group">
+    <label for="user"> Username:  </label><br>
+    <input type="text" name="username" id="user" class="form-control">
+</div>
+ 
+<div class="form-group">
+    <label for="items"> Items:  </label><br>
+    <input type="text" name="items" id="items" class="form-control">
+</div>
+
+<div class="form-group">
+    <label for="quantity"> Quantity:  </label><br>
+    <input type="text" name="quantity" id="quantity" class="form-control">
+</div>
+
+<div class="form-group">
+    <label for="price"> Price:  </label><br>
+    <input type="text" name="price" id="price" class="form-control">
+</div>
+
+<div class="form-group">
+    <label for="file"> Profile Pic:  </label><br>
+    <input type="file" name="file" id="file" class="form-control">
+</div>
+
+<buttom id="submit" name="submit" value="Submit" class="btn-success">Submit</button>
+    
 </body>
 </html>

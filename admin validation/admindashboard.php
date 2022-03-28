@@ -1,3 +1,18 @@
+ <?php
+//   if (!($_SESSION['user_type']=="admin" )) {
+// 	$_SESSION['msg'] = "You must log in first";
+// 	header('location: ../admin validation/admindashboard.php');
+// }
+// elseif(!$_SESSION['user_type']=="user"){
+//     header('location: ./home.php');
+// }
+
+// if (isset($_GET['logout'])) {
+// 	session_destroy();
+// 	unset($_SESSION['user']);
+// 	header("location: ./login.php");
+// } ?> 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,16 +28,15 @@
 </head>
 
 <body>
-      <span class="material-icons-outlined" id="closed">
-        menu
-        </span>
+      
 
     <div class="side-nav">
+        <div class="navigation">
 
-      
+<!--       
         <span class="material-icons-outlined" id="close">
             close
-            </span>
+            </span> -->
         <header>vegetable Delivery</header>
         <ul>
             <a href="#welcome" class="active">
@@ -40,19 +54,13 @@
                        
                     </span><span class="menu">order</span></li>
             </a>
-            
-            <a href="#">
-                <li><span class="material-icons-outlined">
-                        event
-                    </span><span class="menu">addproduct</span></li>
-            </a>
+
             
 
         </ul>
-
-        
-    </div>
-    <div class="right">
+       </div>
+       <div class="nav-left">
+            <p> welcome to admin panel </p>
      
 
 <?php
@@ -60,12 +68,13 @@
     // session_start();
     ?>
 
-    <h1>Welcome <?php echo $_SESSION['username']; ?></h1>
+    <h1>Welcome Parbat</h1>
     <h2><a href = "../components/login.php">Sign Out</a></h2>   
 
     </div>
     <!-- side navbar ends up here -->
+    </div>
 </body>
-<script type="text/javascript" src="./admindashboard.js"></script>
+<!-- <script type="text/javascript" src="./admindashboard.js"></script> -->
 
 </html>
