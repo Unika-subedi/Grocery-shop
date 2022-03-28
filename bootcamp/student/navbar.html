@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Side nav bar</title>
+    <!-- for google icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <style type="text/css">
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        .side-nav {
+            display: flex;
+            flex-direction: column;
+            background-color: #191b1f;
+            height: 100vh;
+            width: 230px;
+            padding-top: 5vh;
+        }
+        
+        #close{
+            position: relative;
+            color: white;
+            top: -3%;
+            left: 81%;
+        }
+        #close:hover, #ham:hover{
+            color: gray;
+            cursor: pointer;
+
+        }
+        #ham{
+            position: absolute;
+            top: 3%;
+            left: 3%;
+            color: white;
+            background-color: #191b1f;
+            border-radius: 25px;
+            padding: 8px;
+            display: none;
+        }
+        
+        .menu {
+            margin-left: 15px;
+        }
+        
+        ul {
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+        }
+        
+        a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            padding: 0 20px;
+            border-bottom: 1px solid rgb(97, 94, 94);
+        }
+        
+        a:hover {
+            background-color: rgb(19, 18, 18);
+            color: rgb(148, 145, 145);
+        }
+        
+        li {
+            list-style-type: none;
+            display: flex;
+            align-items: center;
+            margin: 15px auto;
+        }
+        
+        .material-icons-outlined {
+            font-size: 30px;
+        }
+        
+        header {
+            font-size: 30px;
+            margin: 0;
+            padding: 10px;
+            border-bottom: 1px solid rgb(97, 94, 94);
+            text-align: center;
+            color: white;
+            user-select: none;
+        }
+        @media screen and (max-width:600px) {
+            .side-nav{
+                display: none;
+            }
+            #ham{
+                display: block;
+            }
+        }
+
+    
+    </style>
+
+
+</head>
+
+<body>
+
+    <!-- Lets start making our side navigation menu -->
+
+      <!-- now lets add a hamburger btn -->
+      <span class="material-icons-outlined" id="ham">
+        menu
+        </span>
+
+    <div class="side-nav">
+
+      
+        <span class="material-icons-outlined" id="close">
+            close
+            </span>
+        <header>Vidyasheela</header>
+        <ul>
+            <a href="#" class="active">
+                <li><span class=" material-icons-outlined">
+                        home
+                    </span> <span class="menu">Home</span> </li>
+            </a>
+            <a href="#">
+                <li><span class="material-icons-outlined">
+                        dashboard
+                    </span><span class="menu">Dashboard</span></li>
+            </a>
+            <a href="#">
+                <li><span class="material-icons-outlined">
+                        account_circle
+                    </span><span class="menu">Profile</span></li>
+            </a>
+            <a href="#">
+                <li><span class="material-icons-outlined">
+                        contacts
+                    </span><span class="menu">Contacts</span></li>
+            </a>
+            <a href="#">
+                <li><span class="material-icons-outlined">
+                        apps
+                    </span><span class="menu">Apps</span></li>
+            </a>
+            <a href="#">
+                <li><span class="material-icons-outlined">
+                        event
+                    </span><span class="menu">Events</span></li>
+            </a>
+            <a href="#">
+                <li><span class="material-icons-outlined">
+                        settings
+                    </span><span class="menu">Settings</span></li>
+            </a>
+
+        </ul>
+
+        
+    </div>
+
+
+    <!-- Thats it your simple side nav menu is ready add your links in the menu and use it in youe website -->
+</body>
+<script type="text/javascript">
+    
+        let close_btn = document.querySelector('#close')
+        let ham = document.querySelector('#ham')
+
+        let nav = document.querySelector('.side-nav')
+
+        close_btn.addEventListener('click',()=>{
+            nav.style.display = "none"
+            ham.style.display = "block"
+
+        })
+        ham.addEventListener('click',()=>{
+            nav.style.display = "block"
+            ham.style.display = "none"
+
+        })
+
+    
+</script>
+
+</html>

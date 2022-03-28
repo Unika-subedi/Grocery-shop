@@ -25,7 +25,7 @@
             </span>
         <header>vegetable Delivery</header>
         <ul>
-            <a href="#" class="active">
+            <a href="#welcome" class="active">
                 <li><span class=" material-icons-outlined">
                         home
                     </span> <span class="menu">Home</span> </li>
@@ -40,29 +40,30 @@
                        
                     </span><span class="menu">order</span></li>
             </a>
-            <!-- <a href="#">
-                <li><span class="material-icons-outlined">
-                        contacts
-                    </span><span class="menu">Contacts</span></li>
-            </a>
-             -->
+            
             <a href="#">
                 <li><span class="material-icons-outlined">
                         event
-                    </span><span class="menu">Events</span></li>
+                    </span><span class="menu">addproduct</span></li>
             </a>
-            <a href="#">
-                <li><span class="material-icons-outlined">
-                        settings
-                    </span><span class="menu">Settings</span></li>
-            </a>
+            
 
         </ul>
 
         
     </div>
+    <div class="right">
+     
 
+<?php
+    // include_once('functions.php');
+    // session_start();
+    ?>
 
+    <h1>Welcome <?php echo $_SESSION['username']; ?></h1>
+    <h2><a href = "../components/login.php">Sign Out</a></h2>   
+
+    </div>
     <!-- side navbar ends up here -->
 </body>
 <script type="text/javascript" src="./admindashboard.js"></script>

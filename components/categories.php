@@ -1,6 +1,6 @@
 
-<?php include_once('./header.php'); 
-    include_once('./functions.php');
+<?php 
+    require('./header.php');
 ?>
 <section class="categories" id="categories">
 
@@ -12,23 +12,15 @@
             <img src="../image/cat-1.png" alt="">
             <h3>vegitables</h3>
             <p>upto 45% off</p>
-            <a href="#" class="btn">shop now</a>
+            <a href="./products.php#vege" class="btn">shop now</a>
         </div>
 
         <div class="box">
             <img src="../image/cat-2.png" alt="">
             <h3>fresh fruits</h3>
             <p>upto 45% off</p>
-            <a href="#" class="btn">shop now</a>
+            <a href="./products.php#fruits" class="btn">shop now</a>
         </div>
-
-        <div class="box">
-            <img src="../image/cat-3.png" alt="">
-            <h3>dairy products</h3>
-            <p>upto 45% off</p>
-            <a href="#" class="btn">shop now</a>
-        </div>
-
         <div class="box">
             <img src="../image/cat-4.png" alt="">
             <h3>fresh meat</h3>

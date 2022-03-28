@@ -80,6 +80,11 @@ header {
   color: white;
   user-select: none;
 }
+.right {
+  align-items: right;
+  display: flex;
+  flex-direction: column;
+}
 @media screen and (max-width: 600px) {
   .side-nav {
     display: none;

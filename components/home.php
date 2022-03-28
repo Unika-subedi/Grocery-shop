@@ -1,8 +1,7 @@
 <?php 
  include_once('header.php');
-include_once('./functions.php');
 
-if (!isAdmin()) {
+if (!($_SESSION['user_type']=="admin" || $_SESSION['user_type']=="user")) {
 	$_SESSION['msg'] = "You must log in first";
 	header('location: ./login.php');
 }
@@ -14,16 +13,7 @@ if (isset($_GET['logout'])) {
 }
        
     ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css">
-    <title>Home section</title>
-</head>
-<body>
+
     
     <!-- home section starts  -->
 <section class="home" id="home">
@@ -31,7 +21,7 @@ if (isset($_GET['logout'])) {
     <div class="content">
         <h3>fresh and <span>organic</span> products for your</h3>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam libero nostrum veniam facere tempore nisi.</p>
-        <a href="#" class="btn">shop now</a>
+        <a href="./cart.php" class="btn">shop now</a>
     </div>
 
 </section>
@@ -63,17 +53,17 @@ if (isset($_GET['logout'])) {
 
 </section>
 <?php
-   require('./categories.php');
+   include_once('./categories.php');
     ?>
 
 <?php
-    require('./footer.php'); ?>    
+    include_once('./footer.php'); ?>    
 
 <!-- features section ends -->
 
 
-</body>
+<!-- </body> -->
 <?php
     echo '<script type="text/javascript" src="./js/script.js">'
 ?>
-</html>
+<!-- </html> -->

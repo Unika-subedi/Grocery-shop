@@ -1,4 +1,4 @@
-<?php include_once('functions.php') ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,17 +20,18 @@
 
         <nav>
             <ul class="navigation-p">
-                <li><a href="#home"><i class="fas fa-house-damage" id="housee"></i> Home</a></li>
-                <li><a href="#features"><i class="far fa-image" id="housee"></i> Features</a></li>
+                <li><a href="./home.php#home"><i class="fas fa-house-damage" id="housee"></i> Home</a></li>
+                <li><a href="#categories"><i class="far fa-image" id="housee"></i> Categories</a></li>
+                <li><a href="./cart.php"><i class="fa fa-shopping-basket" id="housee"></i> Cart</a></li>
                 <!-- <li><a href="#products"><i class="fa fa-shopping-basket" id="housee"></i> Products</a></li> -->
                 <!-- <li><a href="#"><i class="fas fa-question"></i> Support</a></li> -->
-                <li><a href="#contactus"><i class="fas fa-phone-alt" id="housee"></i> Contact Us</a></li>
+                <!-- <li><a href="#contactus"><i class="fas fa-phone-alt" id="housee"></i> Contact Us</a></li> -->
                 <li><a href="./logout.php"><i class="fas fa-user"></i></i> Logout</a></li>
                 <label for="toggle-btn" class="hide-menu-btn" id="housee"><i class="fas fa-times"></i></label>
                 
             </ul>
         </nav>
-    </header>
+    </header><br><br><br><br><br><br>
 
 
 

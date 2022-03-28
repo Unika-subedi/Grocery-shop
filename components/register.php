@@ -1,4 +1,4 @@
-<?php include_once('functions.php') ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,12 +10,11 @@
 	<h2>Register</h2>
 </div>
 <form method="post" action="register.php">
-<?php echo display_error(); ?>
 	<div class="input-group">
 		<label>Username</label>
-		<input type="text" name="Username" value="<?php echo $Username; ?>">
+		<input type="text" name="Username" value="">
 	</div>
-	<div class="input-group">
+	<!-- <div class="input-group">
 		<label>Roles</label>
 		<select name="user_type" id="user_type" >
 				<option value="" selected>Select role</option>
@@ -23,7 +22,7 @@
 				<option value="user">User</option>
 			</select>
 	
-	</div>
+	</div> -->
 	<div class="input-group">
 		<label>Password</label>
 		<input type="password" name="Password_1">
