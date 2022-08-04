@@ -13,6 +13,7 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 7rem;
 }
+
 * {
   font-family: "Poppins", sans-serif;
   margin: 0;
@@ -24,11 +25,31 @@ html {
   text-transform: capitalize;
   transition: all 0.2s linear;
 }
+.error {
+  width: 92%;
+  margin: 0px auto;
+  padding: 10px;
+  border: 1px solid #a94442;
+  color: #a94442;
+  background: #f2dede;
+  border-radius: 5px;
+  text-align: left;
+}
 .heading {
   text-align: center;
   padding: 2em;
   font-weight: bold;
   font-size: 3.5rem;
+}
+.search{
+  display: inline-block;
+  margin-left: 100px;
+  padding-top:40px;
+}
+.search input{
+  border: 3px solid black;
+  height: 40px;
+  
 }
 .heading span {
   background: var(--orange);

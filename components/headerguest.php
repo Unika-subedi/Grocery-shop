@@ -12,11 +12,6 @@
     <link rel="stylesheet" href="../css/header.css"/>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/product.css">
-    <script>
-        if ( window.history.replaceState ) {
-            window.history.replaceState( null, null, window.location.href );
-        }
-    </script>
 </head>
 <body>
     <header class="header">
@@ -29,7 +24,7 @@
 
         <nav>
             <ul class="navigation-p">
-                <li><a href="./home.php"><i class="fas fa-house-damage" id="housee"></i> Home</a></li>
+                <li><a href="./home.php#home"><i class="fas fa-house-damage" id="housee"></i> Home</a></li>
                 <li><a href="./categories.php"><i class="far fa-image" id="housee"></i> Categories</a></li>
                 <?php
                     if(isset($_SESSION['cart'])){
@@ -42,7 +37,7 @@
                 <!-- <li><a href="#products"><i class="fa fa-shopping-basket" id="housee"></i> Products</a></li> -->
                 <!-- <li><a href="#"><i class="fas fa-question"></i> Support</a></li> -->
                 <!-- <li><a href="#contactus"><i class="fas fa-phone-alt" id="housee"></i> Contact Us</a></li> -->
-                <li><a href="./logout.php"><i class="fas fa-user" name="logout"></i> Logout</a></li>
+                <li><a href="./logout.php"><i class="fas fa-user" name="logout"></i> Login/SignUp</a></li>
                 <label for="toggle-btn" class="hide-menu-btn" id="housee"><i class="fas fa-times"></i></label>
                 
             </ul>

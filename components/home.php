@@ -1,25 +1,31 @@
-<?php 
+<?php
+session_start();
+include_once('../database/connection.php');
  include_once('header.php');
-
-
-if(!$_SESSION['user_type']=="user"){
-    header('location: ./home.php');
+ 
+// if(!$_SESSION['username']==="user"){
+//     header('location: ./home.php');
+// }elseif(!$_SESSION['username']==="admin"){
+//     header('location: ../admin validation/admindashboard.php');
+// }
+if(!isset($_SESSION['username'])){
+    header('Location: login.php');
+    exit();
 }
-
+ 
 if (isset($_GET['logout'])) {
 	session_destroy();
 	unset($_SESSION['user']);
 	header("location: ./login.php");
-}
-       
-    ?>
+}  
+?>
 
     
     <!-- home section starts  -->
 <section class="home" id="home">
 
     <div class="content">
-        <h3>fresh and <span>organic</span> products for your</h3>
+        <h3>fresh and <span>organic</span> products for your</h3><?php echo $_SESSION['username']?>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam libero nostrum veniam facere tempore nisi.</p>
         <a href="./cart.php" class="btn">shop now</a>
     </div>
@@ -52,9 +58,11 @@ if (isset($_GET['logout'])) {
     </div>
 
 </section>
+
 <?php
    include_once('./categories.php');
     ?>
+    
 
 <?php
     include_once('./footer.php'); ?>    

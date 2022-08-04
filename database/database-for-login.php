@@ -5,9 +5,9 @@ session_start();
    if (isset($_POST['login'])) {
    		$Username = $_POST['Username'];
    		$Password = $_POST['Password'];
-		$Roles = $_POST['Roles'];
+		// $Roles = $_POST['Roles'];
 
-   	   $select = mysqli_query($conn, "SELECT * FROM tb_customer WHERE Username = '$Username' ,Password = '$Password' AND Roles='$Roles'");
+   	   $select = mysqli_query($conn, "SELECT * FROM tb_customer WHERE Username = '$Username' ,Password = '$Password'");
    	//    $row = mysqli_fetch_array($select);
        
    	   if(mysqli_num_rows($select)==1){
@@ -25,7 +25,7 @@ session_start();
 			  else{
 				// echo'Invalid username or password!';
 				$_SESSION['checkUserP'] = "You username or passsword is incorrect";
-                header('location:../login.php');
+                header('location:../components/login.php');
 		  }
    	   }
    	

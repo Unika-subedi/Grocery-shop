@@ -1,6 +1,5 @@
-<?php include'./function.php'
+<?php include'./function.php'?>
 
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,16 +15,7 @@
 	<div class="input-group">
 		<label>Username</label>
 		<input type="text" name="Username" value="">
-	</div>
-	<!-- <div class="input-group">
-		<label>Roles</label>
-		<select name="user_type" id="user_type" >
-				<option value="" selected>Select role</option>
-				<option value="admin">Admin</option>
-				<option value="user">User</option>
-			</select>
-	
-	</div> -->
+
 	<div class="input-group">
 		<label>Password</label>
 		<input type="password" name="Password_1">

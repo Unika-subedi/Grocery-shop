@@ -19,8 +19,7 @@ function register(){
 
 	// receive all input values from the form. Call the e() function
     // defined below to escape form values
-	$username    =  e($_POST['Username']);
-	
+	$username    =  e($_POST['Username']);	
 	$password_1  =  e($_POST['Password_1']);
 	$password_2  =  e($_POST['Password_2']);
 
@@ -46,28 +45,9 @@ function register(){
 			mysqli_query($conn, $query);
 			$_SESSION['success']  = "New user successfully created!!";
 			header('location: home.php');
-		}
-
-			// get id of the created user
-			$logged_in_user_id = mysqli_insert_id($conn);
-
-			$_SESSION['user'] = getUserById($logged_in_user_id); // put logged in user in session
-			$_SESSION['success']  = "You are now logged in";
-			header('location: home.php');				
-		
+		}	
 	}
 }
-
-// // return user array from their id
-// function getUserById($id){
-// 	global $conn;
-// 	$query = "SELECT * FROM tb_customer WHERE id=" . $id;
-// 	$result = mysqli_query($conn, $query);
-
-// 	$user = mysqli_fetch_assoc($result);
-// 	return $user;
-// }
-
 // escape string
 function e($val){
 	global $conn;
@@ -85,71 +65,18 @@ function display_error() {
 			}
 		echo '</div>';
 	}
-// }	
-
-// function isLoggedIn()
-// {
-// 	if (isset($_SESSION['user'])) {
-// 		return true;
-// 	}else{
-// 		return false;
-// 	}
-// }
-
-// // call the login() function if register_btn is clicked
-// if (isset($_POST['login_btn'])) {
-// 	login();
-// }
-
-// // LOGIN USER
-// function login(){
-// 	global $conn, $username, $errors;
-
-// 	// grap form values
-// 	$username = e($_POST['Username']);
-// 	$password = e($_POST['Password']);
-
-// 	// make sure form is filled properly
-// 	if (empty($username)) {
-// 		array_push($errors, "Username is required");
-// 	}
-// 	if (empty($password)) {
-// 		array_push($errors, "Password is required");
-// 	}
 
 // 	// attempt login if no errors on form
-// 	if (count($errors) == 0) {
-// 		$password = md5($password);
+	// if (count($errors) == 0) {
+	// 	$password = md5($password);
 
-// 		$query = "SELECT * FROM tb_customer WHERE Username='$username' AND Password='$password' LIMIT 1";
-// 		$results = mysqli_query($conn, $query);
+	// 	$query = "SELECT * FROM tb_customer WHERE Username='$username' AND Password='$password' LIMIT 1";
+	// 	$results = mysqli_query($conn, $query);
 
-// 		if (mysqli_num_rows($results) == 1) { // user found
-// 			// check if user is admin or user
-// 			$logged_in_user = mysqli_fetch_assoc($results);
-// 			if ($logged_in_user['user_type'] == 'admin') {
-
-// 				$_SESSION['user'] = $logged_in_user;
-// 				$_SESSION['success']  = "You are now logged in";
-// 				header('location: admin/home.php');		  
-// 			}else{
-// 				$_SESSION['user'] = $logged_in_user;
-// 				$_SESSION['success']  = "You are now logged in";
-
-// 				header('location: ./home.php');
-// 			}
-// 		}else {
-// 			array_push($errors, "Wrong username/password combination");
-// 		}
-// 	}
-// }
-
-// function isAdmin()
-// {
-	
-// 	if (isset($_SESSION['user']) && $_SESSION['user']['user_type'] == 'admin' ) {
-// 		return true;
-// 	}else{
-// 		return false;
-// 	}
+	// 	function getAll($table){
+	// 		global $conn;
+	// 		$query ="select * from $table";
+	// 		return $query_run= mysqli_query($conn, $query);
+			
+	// 	}
 }

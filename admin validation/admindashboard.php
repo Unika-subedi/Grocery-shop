@@ -1,80 +1,55 @@
- <?php
-//   if (!($_SESSION['user_type']=="admin" )) {
-// 	$_SESSION['msg'] = "You must log in first";
-// 	header('location: ../admin validation/admindashboard.php');
-// }
-// elseif(!$_SESSION['user_type']=="user"){
-//     header('location: ./home.php');
-// }
-
-// if (isset($_GET['logout'])) {
-// 	session_destroy();
-// 	unset($_SESSION['user']);
-// 	header("location: ./login.php");
-// } ?> 
-
+<?php
+    session_start();
+    error_reporting(0);
+    if(!isset($_SESSION['username'])) //you can add more checks
+{
+   header('Location: ../components/login.php');
+   exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Side nav bar</title>
-    <!-- for google icons -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
-    <link rel="stylesheet" href="./admindashboard.css">
-  
+    <title>vegetable delivery system</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css">
+    <link rel="stylesheet" href="./css/admindashboard.css"/>
+    <link rel="stylesheet" href="../css/style.css">
+    <script>
+        if ( window.history.replaceState ) {
+            window.history.replaceState( null, null, window.location.href );
+        }
+    </script>
 </head>
 
 <body>
-      
+    <header class="header">
+        <div class="brand-logo">
+            vegetable&nbsp;<span>delivery</span>    
+        </div>
 
-    <div class="side-nav">
-        <div class="navigation">
+        <input type="checkbox" id="toggle-btn">
+        <!-- <label for="toggle-btn" class="show-menu-btn"><i class="fas fa-bars"></i></label> -->
 
-<!--       
-        <span class="material-icons-outlined" id="close">
-            close
-            </span> -->
-        <header>vegetable Delivery</header>
-        <ul>
-            <a href="#welcome" class="active">
-                <li><span class=" material-icons-outlined">
-                        home
-                    </span> <span class="menu">Home</span> </li>
-            </a>
-            <a href="#">
-                <li><span class="material-icons-outlined">
-                        dashboard
-                    </span><span class="menu">Dashboard</span></li>
-            </a>
-            <a href="#">
-                <li><span class="material-icons-outlined">add_shopping_cart
-                       
-                    </span><span class="menu">order</span></li>
-            </a>
+        <nav>
+            <ul class="navigation-p">
+                <li><a href="./welcome.php" style="font-size:15px"> Dashboard</a></li>
+                <li><a href="./viewcategory.php"style="font-size:15px"> Categories</a></li>
+                <li><a href="./viewproduct.php"style="font-size:15px"> Products</a></li>
+                <li><a href="./users.php"style="font-size:15px"> Users</a></li>
+                <li><a href="./orders.php"style="font-size:15px"> orders</a></li>
+                <li><a href="../components/logout.php"style="font-size:15px"> Log Out</a></li>
+                <!-- <label for="toggle-btn" class="hide-menu-btn" id="housee"></label> -->
+                
+            </ul>
+        </nav>
+    </header><br><br><br><br><br><br>
+    
+    <!-- <script type="text/javascript" src="../js/script.js"> -->
 
-            
 
-        </ul>
-       </div>
-       <div class="nav-left">
-            <p> welcome to admin panel </p>
-     
 
-<?php
-    // include_once('functions.php');
-    // session_start();
-    ?>
 
-    <h1>Welcome Parbat</h1>
-    <h2><a href = "../components/login.php">Sign Out</a></h2>   
 
-    </div>
-    <!-- side navbar ends up here -->
-    </div>
-</body>
-<!-- <script type="text/javascript" src="./admindashboard.js"></script> -->
 
-</html>

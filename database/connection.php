@@ -11,8 +11,8 @@
     if($conn->connect_error){
         die("Error connecting to database" .$conn->connect_error);
     } else
-    // {
-    //      echo "Database connection established";
-    //  }
+    {
+        //  echo "Database connection established";
+     }
 
 ?>
