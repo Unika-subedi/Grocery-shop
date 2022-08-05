@@ -15,8 +15,13 @@ session_start();
 
     <h1 class="msg">
    <?php
-      // echo $_SESSION['msg'];
+   if ($_SESSION['msg']!='')
+   {
+
+      echo $_SESSION['msg'];
+      $_SESSION['msg']='';
       // echo"<br><button name='ok' class='button'>ok</button>";
+   }
       ?>
 </h1>
 

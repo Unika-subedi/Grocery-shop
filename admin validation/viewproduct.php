@@ -8,7 +8,7 @@
 
 <section class="shopping-cart">
     <form method="post" action="./deleteproduct.php">
-        <button name="add">Add Product</button>
+        <button name="add" style="border: 1px solid black; background:grey; font-color:white;">Add Product</button>
     </form>
 
    <h1 class="heading">Products</h1>

@@ -41,8 +41,18 @@
                 <li><a href="./shopping-cart.php"><i class="fa fa-shopping-basket" id="housee"></i> Cart&nbsp;(<?php echo $count?>)</a></li>
                 <!-- <li><a href="#products"><i class="fa fa-shopping-basket" id="housee"></i> Products</a></li> -->
                 <!-- <li><a href="#"><i class="fas fa-question"></i> Support</a></li> -->
-                <!-- <li><a href="#contactus"><i class="fas fa-phone-alt" id="housee"></i> Contact Us</a></li> -->
+                <li><a href="#contactus"><i class="fas fa-orders" id="housee"></i> Products </a></li>
+                <?php 
+                 if(isset($_SESSION['username'])){
+                ?>
                 <li><a href="./logout.php"><i class="fas fa-user" name="logout"></i> Logout</a></li>
+                <?php
+                 }
+                 else{?>
+                 <li><a href="./logout.php"><i class="fas fa-user" name="logout"></i> Login / Sign Up</a></li>
+                 <?php
+                 }
+                 ?>
                 <label for="toggle-btn" class="hide-menu-btn" id="housee"><i class="fas fa-times"></i></label>
                 
             </ul>

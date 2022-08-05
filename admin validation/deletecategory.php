@@ -14,4 +14,7 @@
     header("Location:./viewcategory.php");
     }
 
+    if(isset($_POST["add"])){
+        header("Location:./addcategory.php");
+    }
 ?>

@@ -24,12 +24,12 @@
                             mysqli_stmt_execute($stmt);
                         }
                         unset($_SESSION['cart']);
-                        // $_SESSION['msg']="order placed"
-                        echo"
-                        <script> alert('order placed');
-                        window.location.href='./shopping-cart.php';
-                        </script> 
-                    ";
+                        $_SESSION['msg']="order placed";
+                        // echo"
+                        // <script> alert('order placed');
+                        // window.location.href='./shopping-cart.php';
+                        // </script> 
+                    // ";
                 }
                 else{
                     echo"

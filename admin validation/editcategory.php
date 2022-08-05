@@ -62,7 +62,7 @@ include '../database/connection.php';
   <br>
   <input type="hidden" name="id" value="<?php echo $id;?>">
   <div class="row">
-    <button name="updated" value="update" class="btn">Update</button>
+    <input type="submit" name="update" value="Update">
   </div>
     </form>
 </div>
