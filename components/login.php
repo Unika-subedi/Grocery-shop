@@ -1,5 +1,7 @@
 <?php
-session_start(); 
+session_start();
+error_reporting(0); 
+// include './header.php';
 include '../database/connection.php';
 if($_SERVER["REQUEST_METHOD"] == "POST") {
     $myusername = $_POST['Username'];
@@ -23,14 +25,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 		}
 		else {
 			$_SESSION['username'] = $row['Username'];
-			header("location: ../admin validation/admindashboard.php");
+			header("location: ../admin validation/welcome.php");
 		}	
     }else {
+		$_SESSION['msg']="invalid username/password";
 		
-		echo"
-		<script> alert('invalid username!!!');
-		window.location.href='login.php';
-		</script>";  
+		// echo"
+		// <script> alert('invalid username!!!');
+		// window.location.href='login.php';
+		// </script>";  
 	}
 }
 ?>
@@ -41,24 +44,28 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
 	<title>login</title>
 	<link rel="stylesheet" type="text/css" href="../css/signup.css">
+	<script>
+        if ( window.history.replaceState ) {
+            window.history.replaceState( null, null, window.location.href );
+        }
+    </script>
 </head>
-<style>
-.error {
-	width: 92%;
-	margin: 0px auto;
-	padding: 10px;
-	border: 1px solid #a94442;
-	color: #a94442;
-	background: #f2dede;
-	border-radius: 5px;
-	text-align: left;
-  }
-</style
 <body>
 	<div class="header">
+	
 		<h2>Login</h2>
+		<h2 style="color:red">
+	<?php
+   if ($_SESSION['msg']!='')
+   {
+
+      echo $_SESSION['msg'];
+      $_SESSION['msg']='';
+   }
+      ?>
+	  </h2>
 	</div>
-	<form method="post" action="login.php">
+	<form method="post" action="">
 
 		<div class="input-group">
 		
@@ -79,7 +86,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 			<input type="password" name="Password">
 		</div>
 		<div class="input-group">
-			<button type="submit" class="btn" name="login_btn">Login</button>
+			<button type="submit" class="btn" name="login_btn">Login</button>&nbsp;<button type="submit" class="btn"><a href="home.php">Back To Home</a></button>
 		</div>
 		<p>
 			Not a member? <a href="register.php">Sign up</a>

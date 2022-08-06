@@ -3,6 +3,7 @@
   // echo $id;
 
 include '../database/connection.php';
+include '.logincheck.php';
 
   $sqlquery1= "SELECT * FROM `categories`";
   $result = mysqli_query($conn,$sqlquery1);
@@ -118,9 +119,11 @@ include '../database/connection.php';
       $update = "UPDATE `product` SET `prdct_name`='$product_name',`prdct_qty`='$product_quantity',`prdct_price`='$product_price',`prdct_img`='$image',`prdct_cat`='$product_category',`prdct_desc`='$product_name' WHERE prdct_id = $id";
       if($product=mysqli_query($conn,$update)){
         move_uploaded_file($file_tmp,$p_image_folder);
+        $_SESSION['msg']="Updated Successfully";
         header('location:viewproduct.php');
       }else{
-        echo"not";
+        
+      $_SESSION['msg']="failed To Edit";
       }
 
     }

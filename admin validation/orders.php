@@ -2,6 +2,7 @@
 <?php
     include './admindashboard.php';
     include '../database/connection.php';
+    include '.logincheck.php';
 ?>
 
 <link rel="stylesheet" href="./css/checkout.css">
@@ -10,7 +11,16 @@
 
 <section class="shopping-cart" style="">
     <h1 style="font-size: 30px; font-weight:bold; text-align:center; padding-top: 20px;"> Users Orders </h1>
+    <h2 style="color:red">
+	<?php
+   if ($_SESSION['msg']!='')
+   {
 
+      echo $_SESSION['msg'];
+      $_SESSION['msg']='';
+   }
+      ?>
+	  </h2>
    <table>
       <thead>
          <th>Order Id</th>

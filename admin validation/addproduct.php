@@ -1,6 +1,8 @@
 <?php
 // session_start();
+error_reporting(0);
     include './admindashboard.php';
+    include '.logincheck.php';
     include_once'../database/connection.php';
     if(!$conn){
 
@@ -32,12 +34,12 @@
         $res=mysqli_query($conn,$sqlquery);
          if($res){
           move_uploaded_file($file_tmp,$p_image_folder);
-          $msg[] = "Product added successfully.";
+          $_SESSION['msg'] = "Product added successfully.";
           header("location:addproduct.php");
 
         }
         else{
-          echo "failed to add record";
+          $_SESSION['msg']="failed to add record";
         }
     }
 ?>
@@ -48,7 +50,11 @@
 <form action="" method="post" enctype="multipart/form-data">
   <div class="addprod">
   <div class="row">
+    
     <div class="Product">
+    <h2 style="text-align:center; color:red"><?php echo $_SESSION['msg'];
+      $_SESSION['msg']=""; ?>
+    </h2>
       <label for="fname">Product Name:</label>
     </div>
     <div class="Product-fields">

@@ -1,12 +1,23 @@
 <title>Users</title>
 <?php
     include'./admindashboard.php';
+    include '.logincheck.php';
 ?>
 <link rel="stylesheet" href="./css/checkout.css">  
 <div class="container-list">
 <section class="shopping-cart">
     <h1 style="font-size: 30px; font-weight:bold; text-align:center; padding-top: 20px;"> Users </h1>
-   <table>
+    <h2 style="color:red">
+	<?php
+   if ($_SESSION['msg']!='')
+   {
+
+      echo $_SESSION['msg'];
+      $_SESSION['msg']='';
+   }
+      ?>
+	  </h2>
+    <table>
       <thead>
          <th style="width:10px;">S.N</th>
          <th>Username</th>

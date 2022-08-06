@@ -1,17 +1,29 @@
 <title>Product Details</title>
 <?php
     include './admindashboard.php';
+    include '.logincheck.php';
 ?>
 <link rel="stylesheet" href="./css/checkout.css">  
 <title>Products</title>
 <div class="container">
 
 <section class="shopping-cart">
+<?php
+   if ($_SESSION['msg']!='')
+   {
+
+      echo $_SESSION['msg'];
+      $_SESSION['msg']='';
+   }
+      ?>
     <form method="post" action="./deleteproduct.php">
         <button name="add" style="border: 1px solid black; background:grey; font-color:white;">Add Product</button>
     </form>
 
    <h1 class="heading">Products</h1>
+   <h2 style="color:red">
+	
+	  </h2>
    <table>
       <thead>
          <th style="width:10px;">S.N</th>

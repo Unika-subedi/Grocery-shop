@@ -25,6 +25,7 @@
                         }
                         unset($_SESSION['cart']);
                         $_SESSION['msg']="order placed";
+                        header("Location:shopping-cart.php");
                         // echo"
                         // <script> alert('order placed');
                         // window.location.href='./shopping-cart.php';
@@ -32,18 +33,20 @@
                     // ";
                 }
                 else{
-                    echo"
-                    <script> alert('sql prepare error');
-                    window.location.href='./shopping-cart.php';
-                    </script>
-                ";  
+                    $_SESSION['msg']="sql prepare error";
+                    // echo"
+                    // <script> alert('sql prepare error');
+                    // window.location.href='./shopping-cart.php';
+                    // </script>
+                // ";  
                 }
             }else{
-                echo"
-                            <script> alert('connection failed');
-                            window.location.href='./shopping-cart.php';
-                            </script> 
-                        ";
+                $_SESSION['msg']="connection Failed";
+                // echo"
+                //             <script> alert('connection failed');
+                //             window.location.href='./shopping-cart.php';
+                //             </script> 
+                //         ";
             }
         }
     }

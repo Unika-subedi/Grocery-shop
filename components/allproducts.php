@@ -1,7 +1,7 @@
 <?php
-    include'../database/connection.php';
-    // include'./header.php';
 	session_start();
+    include'../database/connection.php';
+    include'./header.php';
 ?>
 <link rel="stylesheet" href="../css/product.css"/>
 <body>

@@ -94,11 +94,6 @@ session_start();
       <!-- <link rel="stylesheet" href="../css/checkout.css"> -->
    <form action="purchase.php" method="post" enctype="multipart/form-data">
 
-      <div class="display-order">
-         
-         <span></span>
-         <span class="grand-total"> grand total :/-<i id='gtotal'></i></span>
-      </div>
 
          <div class="flex">
             <div class="inputBox">
@@ -107,7 +102,7 @@ session_start();
             </div>
             <div class="inputBox">
                <span>your number</span>
-               <input type="number" placeholder="enter your number" name="phone_no" required>
+               <input type="number" placeholder="enter your number" name="phone_no" max="9999999999" required>
             </div>
             <div class="inputBox">
                <span>Address</span>
@@ -146,6 +141,7 @@ session_start();
    }
 
    subTotal();
+
 </script>
 
 <!-- custom js file link  -->

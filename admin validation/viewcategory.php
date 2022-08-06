@@ -1,18 +1,27 @@
 <title>Category Details</title>
 <?php
     include'./admindashboard.php';
+    // include '.logincheck.php';
 ?>
 <link rel="stylesheet" href="./css/checkout.css">  
 <title>Categories</title>
 <div class="container">
 
 <section class="shopping-cart"> 
+    <h2 style="color:red">
+	<?php
+   if ($_SESSION['msg']!='')
+   {
+
+      echo $_SESSION['msg'];
+      $_SESSION['msg']='';
+   }
+      ?>
+	  </h2>
 <form method="post" action="./deletecategory.php">
         <button name="add" style="border: 1px solid black; background:grey; font-color:white;">Add Category</button>
 </form>
-    <h1 style="font-size: 30px; font-weight:bold; text-align:center; padding-top: 20px;"> Categories </h1><?php 
-// echo"hello";
-echo $_SESSION['user_type']?>
+    <h1 style="font-size: 30px; font-weight:bold; text-align:center; padding-top: 20px;"> Categories </h1> 
    <table>
 
       <thead>
@@ -25,7 +34,7 @@ echo $_SESSION['user_type']?>
       <tbody>
       <?php
             include '../database/connection.php';
-            $Sql= "select * from categories";
+            $Sql= "SELECT * FROM `categories` ORDER BY `categories`.`created_date` DESC";
             $res=mysqli_query($conn,$Sql);
             $sn=0;
             while($row=mysqli_fetch_assoc($res)){

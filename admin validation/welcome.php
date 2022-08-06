@@ -1,5 +1,6 @@
 <?php
 include('admindashboard.php');
+include '.logincheck.php';
 ?>
 
     <link rel="stylesheet" href="./css/home.css"/>

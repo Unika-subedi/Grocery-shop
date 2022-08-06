@@ -1,5 +1,7 @@
 <?php
 include '../database/connection.php';
+include 'logincheck.php';
+include 'admindashboard.php';
   $id=$_POST['id'];
   // echo $id;
 
@@ -19,10 +21,22 @@ include '../database/connection.php';
 <title>Category Details</title>
 <body>
 <div class="container">
+<h2 style="color:red">
+	<?php
+   if ($_SESSION['msg']!='')
+   {
+
+      echo $_SESSION['msg'];
+      $_SESSION['msg']='';
+   }
+      ?>
+	  </h2>
 <form action="" method="post" enctype="multipart/form-data">
 
   <div class="row">
     <div class="Product">
+  
+    </h2>
       <label for="fname">categories Name:</label>
     </div>
     <div class="Product-fields">
@@ -70,7 +84,8 @@ include '../database/connection.php';
  <!-- php code to update the product -->
 
 <?php
-if(isset($_POST['updated'])){
+if(isset($_POST['update'])){
+  $id=$_POST['id'];
     
       $category_name = $_POST['category_name'];
       $created_date = $_POST['created_date'];
@@ -86,7 +101,9 @@ if(isset($_POST['updated'])){
       // echo $update;
         if($product=mysqli_query($conn,$update)){
         move_uploaded_file($file_tmp,$p_image_folder);
-        header('location:viewcategory.php');
+        
+        $_SESSION['msg']="Edited information successfully";
+        // header('location:viewcategory.php');
       }else{
         echo"not";
       }

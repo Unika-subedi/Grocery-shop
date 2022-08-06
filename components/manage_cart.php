@@ -8,11 +8,13 @@
                     $myitems=array_column($_SESSION['cart'],'Item_Name');
                         if(in_array($_POST['Item_Name'],$myitems)){
                             
-                            echo"
-                            <script> alert('item already added');
-                            window.location.href='./shopping-cart.php';
-                            </script> 
-                        ";  
+                            $_SESSION['msg']="item already added";
+                            header("Location:shopping-cart.php");
+                        //     echo"
+                        //     <script> alert('item already added');
+                        //     window.location.href='./shopping-cart.php';
+                        //     </script> 
+                        // ";  
                         }
                         else{
                             $count=count($_SESSION['cart']);
@@ -28,12 +30,13 @@
                         }
                 }else{
                     $_SESSION['cart'][0]=array('image'=>$_POST['image'],'Item_Name'=>$_POST['Item_Name'],'Price'=>$_POST['Price'],'Quantity'=>1);
-                    
-                    echo"
-                    <script> alert('item added');
-                    window.location.href='./shopping-cart.php';
-                    </script> 
-                ";  
+                    $_SESSION['msg']="item added";
+                    header("Location:shopping-cart.php");
+                //     echo"
+                //     <script> alert('item added');
+                //     window.location.href='./shopping-cart.php';
+                //     </script> 
+                // ";  
                 }
 
             }
@@ -44,11 +47,12 @@
                     if($value['Item_Name']==$_POST['Item_Name']){
                         unset($_SESSION['cart'][$key]);
                         $_SESSION['cart']=array_values($_SESSION['cart']);
-                        
-		                echo"
-                            <script> alert('item removed');
-                            window.location.href='./allproducts.php';
-                            </script>";
+                        $_SESSION['msg']="item Removed";
+                        header("Location:shopping-cart.php");
+		                // echo"
+                        //     <script> alert('item removed');
+                        //     window.location.href='./allproducts.php';
+                        //     </script>";
                     }
                 }
             }  
@@ -64,6 +68,7 @@
                     }
                 }
             }
+
             if(isset($_POST['save'])){
                 header("Location:./allproducts.php");
             }

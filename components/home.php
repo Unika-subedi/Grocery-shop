@@ -12,12 +12,6 @@ include_once('../database/connection.php');
 //     header('Location: login.php');
 //     exit();
 // }
- 
-if (isset($_GET['logout'])) {
-	session_destroy();
-	unset($_SESSION['user']);
-	header("location: ./login.php");
-}  
 ?>
 
     
@@ -25,9 +19,12 @@ if (isset($_GET['logout'])) {
 <section class="home" id="home">
 
     <div class="content">
-        <h3>fresh and <span>organic</span> products for your</h3><?php echo $_SESSION['username']?>
+        <?php 
+        // echo $_SESSION['username']
+        ?>
+        <h3>fresh and <span>organic</span> products for your</h3>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam libero nostrum veniam facere tempore nisi.</p>
-        <a href="./cart.php" class="btn">shop now</a>
+        <a href="allproducts.php" class="btn">shop now</a>
     </div>
 
 </section>

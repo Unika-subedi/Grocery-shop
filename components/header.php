@@ -41,7 +41,7 @@
                 <li><a href="./shopping-cart.php"><i class="fa fa-shopping-basket" id="housee"></i> Cart&nbsp;(<?php echo $count?>)</a></li>
                 <!-- <li><a href="#products"><i class="fa fa-shopping-basket" id="housee"></i> Products</a></li> -->
                 <!-- <li><a href="#"><i class="fas fa-question"></i> Support</a></li> -->
-                <li><a href="#contactus"><i class="fas fa-orders" id="housee"></i> Products </a></li>
+                <!-- <li><a href="./allproducts.php"><i class="fas fa-orders" id="housee"></i> Products </a></li> -->
                 <?php 
                  if(isset($_SESSION['username'])){
                 ?>
@@ -58,7 +58,7 @@
             </ul>
         </nav>
     </header><br><br><br><br><br><br>
-
+    
 
 
 

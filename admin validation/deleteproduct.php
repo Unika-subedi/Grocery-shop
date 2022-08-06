@@ -1,5 +1,6 @@
 <?php
     include '../database/connection.php';
+    include '.logincheck.php';
     // if(isset($_GET["id"])){
     //     $prdct_id = $_GET["id"];
     //     echo $prdct_id;
@@ -11,6 +12,7 @@
     $deletequery= "DELETE FROM product WHERE `product`.`prdct_id` =$prdct_id";
     // echo $deletequery;
     $delete=mysqli_query($conn,$deletequery);
+    $_SESSION['msg']="deleted successfully";
     header("Location:./viewproduct.php");
     }
 
