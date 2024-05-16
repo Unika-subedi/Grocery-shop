@@ -3,7 +3,7 @@
   // echo $id;
 
 include '../database/connection.php';
-include '.logincheck.php';
+include './logincheck.php';
 
   $sqlquery1= "SELECT * FROM `categories`";
   $result = mysqli_query($conn,$sqlquery1);
@@ -57,9 +57,9 @@ include '.logincheck.php';
       <div class="Product">
         <label for="country">Image</label>
       </div>
-      <div class="Product-fields">
+      <div class="Product-fields" >
         <input type="file" name="image" ><br><br>
-        <img src="./images/products/<?php echo $image; ?>" alt="Product">
+        <img style="height:150px; width:auto;" src="./images/products/<?php echo $image; ?>" alt="Product">
       </div>
   </div>
 

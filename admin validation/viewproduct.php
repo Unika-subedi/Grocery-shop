@@ -53,6 +53,7 @@
             </form>
             <a href='./editproduct.php?id=$row[prdct_id]&cat_id=$cat_id'> EDIT</a>
             </td>
+          
         </tr>";
         
     }

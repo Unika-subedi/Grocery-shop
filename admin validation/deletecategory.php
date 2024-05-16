@@ -1,7 +1,7 @@
 <?php
-    session_start();
+    // session_start();
     include '../database/connection.php';
-    include '.logincheck.php';
+    include './logincheck.php';
     // if(isset($_GET["id"])){
     //     $prdct_id = $_GET["id"];
     //     echo $prdct_id;

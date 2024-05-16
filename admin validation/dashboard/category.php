@@ -163,8 +163,3 @@ body{
 </body>
 </html>
 
-
-
-<?php
-// require('footer.inc.php');
-?>
